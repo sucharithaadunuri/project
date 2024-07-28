@@ -1,0 +1,996 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2%;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    margin-top: 0;
+    padding: 0;
+}
+
+li {
+    list-style: none;
+    margin-left: 0;
+    padding: 10px;
+}
+
+li:hover {
+    background-color: rgb(113, 227, 235);
+    color: white;
+    border-radius: 50%;
+    width: auto;
+    text-align: right;
+}
+.list{
+    display: none;
+}
+
+.logo{
+    position: absolute;
+    left: 7px;
+    top: 7px;
+}
+
+.t1{
+    position: fixed;
+    top: 0px;
+    right: 0;
+    width: 50px;
+    padding-top:8px;
+    font-size: 35px;
+    margin:8px;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    z-index: 1px;
+
+}
+.t1:focus+.list{
+    display: block;
+    transition: display 0.5s ease;
+    width:280px;
+    text-align: right;
+    /* background-color: rgb(113, 227, 235); */
+    border-radius: 50%;
+    width: auto;
+}
+.li:hover{
+    background-color: aqua;
+}
+
+
+.topbtn {
+    width: 100%;
+    height: auto;
+    border-radius: 50%;
+    background-color: #f0165e;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+}
+ 
+ .icon2{
+      display: inline-block;
+        /* width:50px;
+        height: 30px; */
+    }
+.topbtn:hover {
+    background-color: rgb(189, 187, 187);
+    color: #f0165e;
+}
+
+header {
+    background-image: url(./banner-bg.jpg);
+    color: white;
+    padding: 7%;
+    display: flex;
+    flex-direction: column;
+    border-bottom-left-radius: 10%;
+    border-bottom-right-radius: 10%;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-content {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.header-content h1 {
+    font-size: 2.5em;
+    margin-bottom: 2%;
+}
+
+.header-content p {
+    font-size: 1.2em;
+    margin-bottom: 2%;
+    padding: 4%;
+}
+
+.header-content input {
+    padding: 2%;
+    margin-right: 2%;
+    width: 80%;
+}
+
+.header-content button {
+    padding: 2%;
+    background: #f8256b;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 30%;
+    position: absolute;
+    left: 70%;
+    height: 6.5%;
+
+}
+
+.header-image img {
+    width: 80%;
+    border-radius: 10%;
+    margin-top: 20px;
+}
+
+.discount {
+    background: #f71c65;
+    padding: 2%;
+    border-radius: 50%;
+    color: white;
+    font-size: 1.2em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.features, .trending, .most-played, .categories, .offers {
+    padding: 4%;
+    text-align: center;
+
+}
+
+.feature, .game-card, .game-card2, .category-card, .offer-card1, .offer-card2 {
+    background: white;
+    padding: 4%;
+    text-align: center;
+    border-radius: 10%;
+    box-shadow: 0 0 10px rgba(5, 5, 5, 0.1);
+    margin: 10px auto;
+}
+
+.feature {
+    width: 80%;
+}
+
+.game-card, .game-card2, .category-card {
+    width: 90%;
+}
+
+.game-card img, .game-card2 img, .category-card img {
+    width: 100%;
+    border-radius: 10%;
+}
+
+.button1, .button2, .button3, .button4, .explore1, .explore2, .explore3, .explore4, .explore5, .explore6 {
+    background-color: #fe1864;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-top: 10px;
+    width: 40%;
+    height: auto;
+}
+
+.button1:hover, .button2:hover, .button3:hover, .button4:hover, .explore1:hover, .explore2:hover, .explore3:hover, .explore4:hover, .explore5:hover, .explore6:hover {
+    background-color: rgb(215, 211, 211);
+    color: blue;
+}
+
+.offers img{
+        width: 95%;
+}
+ .offer-card2 input{
+    border-radius: 20px;
+    padding: 3px;
+ }
+
+ .button3{
+    width: 50%;
+    height: 30px;
+    border-radius: 50px;
+ }
+
+ .button4{
+    width: 50%;
+    height: 30px;
+    border-radius: 50px;
+ }
+
+
+footer {
+    text-align: center;
+    color: white;
+    background-image: url(./footer-bg.jpg);
+    padding: 10px;
+    border-top-left-radius: 10%;
+}
+
+                           /* media queries */
+
+     @media screen and (width > 774px){
+             .t1{
+                display: none;
+             }
+             .list{
+                display: block;
+             }
+             nav ul{
+    display: flex;
+    flex-direction: row;
+    gap:30px;
+    justify-content: space-around;
+    margin-left: 150px;
+    }
+    .logo{
+        margin-top: 40px;
+    }
+
+    li{
+    margin-left: 80px;
+    margin-top: -10px;
+    justify-content:space-evenly
+
+    }
+
+    li a:hover{
+    border-radius:50px;
+    /* height: 10px; */
+    text-align: center;
+    display: inline-block;
+   }
+
+   .topbtn{
+     width: 100px;
+     height: 40px;
+     border-radius: 50px;
+     background-color: #f0165e;
+     border: none;
+     color: white;
+     margin-bottom: -10px;
+     margin-left: 350px;
+      
+    }   
+    .topbtn:hover{
+        background-color: rgb(189, 187, 187);
+        color: #f0165e;
+    } 
+    
+    .features {
+        justify-content: space-around;
+        padding: 40px 0;
+        gap: 60px;
+        margin-top: -140px;
+        margin-left: 110px;
+        position: absolute;
+        display: flex;
+    }
+
+    .feature {
+        background: white;
+        padding: 40px;
+        text-align: center;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(5, 5, 5, 0.1);
+        width: 15%;
+        display: inline-block;
+        margin-left: 65px;
+        
+    }
+    .point{
+        background-color: blue;
+        padding: 10px;
+        border-radius: 50%; 
+
+    }  
+
+    header {
+        background-image: url(./banner-bg.jpg);
+        color: white;
+        padding: 50px 20px;
+        display: flex;
+        height: 650px;
+        border-bottom-left-radius: 100px;
+        border-bottom-right-radius: 100px;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+        bottom: 16px;
+    
+        
+    }
+    
+     .header-content {
+        max-width: 50%;
+        margin-left:40px;
+        margin-bottom: 250px;
+        
+    } 
+     
+    .header-content h1 {
+        font-size: 2.5em;
+        margin-bottom: -50px;
+        margin-left: 1cqmax;
+    
+    }
+    
+    .header-content p {
+        font-size: 1.2em;
+        margin-bottom: 20px;
+        padding: 30px;
+        margin-left: 60px;
+    
+    }
+    
+     .header-content-input{
+        padding: 10px;
+        margin-left: 100px;
+        width: 50px; 
+        border-radius: 40px;
+
+        
+    }
+     
+     .header-content button {
+        padding: 10px 20px;
+        background: #ff4081;
+        border-radius: 50px;
+        border: none;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        left: 280px;
+        height: 50px;
+        margin-left: 280px;
+        width: 200px; 
+    }
+    .header-content img{
+     margin-left: -70px;
+     margin-top: 50px;
+    }
+    
+    .header-image {
+        position: relative;
+        top: -680px;
+        right: -550px;
+    }
+
+    .rs{
+        background-color: blue;
+        position: absolute;
+        width: 60px;
+        height: 30px;
+        border-radius: 50px;
+        text-align: center;
+        padding-top: 10px;
+        margin-left: -70px;
+        margin-top: 40px;
+        
+    }
+     .discount {
+        position: absolute;
+        top: 370px;
+        right: 370px;
+        background: #ff4081;
+        padding: 10px;
+        border-radius: 50%;
+        color: white;
+        font-size: 1.2em;
+    } 
+     
+    .single{
+        width: 350px;
+        margin-top: 500px;
+    }
+
+    .trending{
+    padding: 50px 20px;
+    margin-top: 150px;
+    
+    }
+    .game-card{
+        background: rgb(228, 227, 227);
+        margin: 40px;
+        padding: 0px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        width: 260px;
+        height: 370px;
+        
+        }
+        
+        .trending .game-card > img{
+            width: 260px;
+            border-radius: 20px;   
+        }
+
+    .game-card1{
+            margin-left: 20px;
+        }
+    .button1{
+            background-color: #fe1864;
+            border-radius: 50px;
+            padding: 20px;
+            color: white;
+            position: absolute;
+            top: 960px;
+            right: 110px;
+            width: 140px;
+            height: 60px;
+        }
+    .button1:hover{
+            background-color: rgb(215, 211, 211);
+            color: blue;
+        }
+        p{
+          margin-left: 2px;
+        }
+        
+    .dd{
+        /* display:inline-block; */
+        position: absolute;
+        margin-top: 20px;
+        }
+
+    .icon2{
+            position: absolute;
+            /* margin-right: 90px; */
+            margin-top: 260px;
+            margin-left: -100px;    
+        }
+
+    .percentage1{
+            background-color: rgb(64, 103, 230);
+            color: white;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border-radius: 10px;
+            padding-top: 15px;
+            position: absolute;
+            margin-top: -350px;
+            margin-left: 310px;
+            
+    }
+    .percentage2{
+            background-color: rgb(64, 103, 230);
+            color: white;
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            border-radius: 10px;
+            padding-top: 15px;
+            position: absolute;
+            margin-top: -350px;
+            margin-left: 640px;
+    }
+
+    .percentage3{
+            background-color: rgb(64, 103, 230);
+            color: white;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border-radius: 10px;
+            padding-top: 15px;
+            position: absolute;
+            margin-top: -350px;
+            margin-left: 980px;
+    }
+    .percentage4{
+            background-color: rgb(64, 103, 230);
+            color: white;
+            width: 50px;
+            height: 30px;
+            text-align: center;
+            border-radius: 10px;
+            padding-top: 15px;
+            position: absolute;
+            margin-top: -350px;
+            margin-left: 1320px;
+    }
+         
+    .most-played{
+        padding: 50px 20px;
+        text-align: center;
+        background-color: rgb(223, 221, 221);
+        border: 30px;
+        margin: 10px;
+        border-radius: 30px;
+        
+    }
+    
+    .game-card2 {
+        background-color: rgb(237, 235, 235);
+        padding: 10px;
+        margin: 5px;
+        border-radius: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        display: inline-block;
+        width: 190px;
+
+    }
+    .game-card2 > img{
+        width: 190px;
+        padding: 0px;
+        border-radius: 20px; 
+     
+    }
+    .button2{
+        position: absolute;
+        background-color: #fc3779;
+        border-radius: 30px;
+        padding: 20px;
+        color: white;
+        top: 1640px;
+        right: 130px;
+        width: 140px;
+        height: 60px;
+    }
+
+    .button2:hover{
+        background-color: rgb(215, 211, 211);
+        color: blue;
+    }
+
+    .explore1{
+        background-color:#ff4081;
+        border-radius: 30px;
+        padding: 10px;
+        color: white;
+        top: 200px;
+        right: 30px;
+        width: 100px;
+        height: 40px;
+        border: none;
+        position: absolute;
+        left: 180px;
+        top: 1990px;
+        
+    }
+    .explore2{
+        background-color:#ff4081;
+        border-radius: 30px;
+        padding: 10px;
+        color: white;
+        top: 1700px;
+        right: 30px;
+        width: 100px;
+        height: 40px;
+        border: none;
+        position: absolute;
+        left: 395px;
+        top: 1990px;
+        
+    }
+    .explore3{
+        background-color:#ff4081;
+        border-radius: 30px;
+        padding: 10px;
+        color: white;
+        top: 1700px;
+        right: 30px;
+        width: 100px;
+        height: 40px;
+        border: none;
+        position: absolute;
+        left: 620px;
+        top:1990px;
+        
+    }
+    .explore4{
+        background-color:#ff4081;
+        border-radius: 30px;
+        padding: 10px;
+        color: white;
+        top: 1700px;
+        right: 30px;
+        width: 100px;
+        height: 40px;
+        border: none;
+        position: absolute;
+        left: 870px;
+        top: 1990px;
+        
+    }
+    .explore5{
+        background-color:#ff4081;
+        border-radius: 30px;
+        padding: 10px;
+        color: white;
+        top: 1700px;
+        right: 30px;
+        width: 100px;
+        height: 40px;
+        border: none;
+        position: absolute;
+        left: 1085px;
+        top:1990px;
+        
+    }
+    .explore6{
+        background-color:#ff4081;
+        border-radius: 30px;
+        padding: 10px;
+        color: white;
+        top: 1700px;
+        right: 30px;
+        width: 100px;
+        height: 40px;
+        border: none;
+        position: absolute;
+        left: 1300px;
+        top: 1990px;
+        
+    }
+     
+    .categories {
+        padding: 50px 20px;
+        text-align: center;     
+    }
+     .category-card{
+        background: rgb(84, 84, 244);
+        margin: 10px;
+        padding: 0px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        justify-content: space-around;
+        width: 250px;
+        display: inline-block;
+        border-radius: 30px;
+        margin-bottom: 20px;
+        
+    }
+    .category-card .category-card > img{
+        width: 250px;
+        height: 250px;
+        position: relative;
+        bottom: -7px;
+        border-radius: 20px;
+        
+    }
+   
+    .offers {
+        padding: 50px 20px;
+        text-align: center;
+       
+    }
+    .offer-card1{
+        background: rgb(219, 217, 217);
+        padding: 20px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position:absolute;
+        margin-left: 100px;
+        margin-top: 100px;
+        width: 500px;
+        height: 320px;
+        z-index: 1;
+    }
+    .offer-card2{
+        background: rgb(219, 217, 217);
+        padding: 20px;
+        margin: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        position:absolute;
+        margin-left: 900px;
+        margin-top: -260px;
+        height: 250px;
+    }
+
+     .offers .offer-img{
+        /* margin-left: 30%; */
+        /* margin-right: 20%; */
+        height: 500px;
+        width: 600px;
+        border-radius: 30px;
+    }
+    .button3{
+        background-color:#f0165e;
+        border-radius: 30px;
+        border: none;
+        padding: 10px;
+        height: 50px;
+        color: white;
+        width: 120px;
+    }
+    .button3:hover{
+        background-color: rgb(249, 192, 192);
+        color: blue;
+        
+    }
+
+    .button4{
+        background-color:#f0165e;
+        border-radius: 30px;
+        border: none;
+        padding: 10px;
+        height: 55px;
+        color: white;
+        width: 200px;
+        position: relative;
+        right: 40px;
+     }
+
+    .button4:hover{
+        background-color: rgb(249, 192, 192);
+        color: blue;
+    }
+     .offer-card2 input{
+     height: 50px;
+     border-radius: 30px;
+     border: none;
+     width: 160px;
+     padding-left: 20px;
+     }
+     
+     footer {
+        text-align: center;
+        color: white;
+        background-image: url(./footer-bg.jpg);
+        border-top-left-radius: 50px;
+        border-top-right-radius: 50px;
+        height: 100px;
+        padding-top: 50px; 
+        margin-top: 100px;
+    }
+    /* .offers .offer-img{
+        width: 100px;
+    }  */
+         
+    
+} 
+    
+    
+</style>
+</head>
+<body>
+    <header>
+
+    <nav class="toggler">
+          <div class="ion">
+          <img src="./logo.png" class="logo"> 
+          </div>
+          <button class="btn t1">
+            <ion-icon name="grid-outline"></ion-icon>
+          </button>
+          <div class="list">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Contact</a></li>
+                <div><button class="topbtn">SIGN IN</button></div>  
+            </ul>
+         </div>
+        </nav> 
+
+         <div class="header-content">
+            <p>Welcome to LUGX</p>
+            <h1>BEST GAMING SITE EVER!</h1>
+            <img src="./caption-dec.png">
+            <p>LUGX gaming is free boostrap 5 HTML CSS website template for your gaming websites.
+             you can download and use this layout for commercial purpose. please tell your friends about templateMo.</p>
+            <input type="text" placeholder="Type Something" style="border-radius: 50px;">
+            <button>EXPLORE NOW</button>
+        </div>
+        <div class="header-image">
+            <img src="./banner-image.jpg" alt="">
+            <span class="rs">$22</span>
+            <span class="discount">-40%</span>
+        </div>
+    </header> 
+
+     <section class="features">
+
+        <div class="feature">
+        <img src="./featured-01.png" class="point">
+        <p> FREE STORAGE</p>
+       </div>
+
+       <div class="feature">
+        <img src="./featured-02.png" class="point">
+        <p>USER MODE</p>
+       </div>
+        
+       <div class="feature">
+        <img src="./featured-03.png" class="point">
+        <p>REPLAY READY</p>
+       </div>
+
+       <div class="feature">
+        <img src="./featured-04.png" class="point">
+        <p>EASY LAYOUT</p>
+       </div>
+
+    </section>
+   
+   <section class="trending">
+        <p style="color: #ff0f5f; margin-left: 100px;" >Trending</p>
+          <h2 style="margin-left: 100px;">Trending Games</h2>
+          <button class="button1">VIEW ALL</button>
+  
+        <div class="game-card game-card1">
+            <img src="./top-game-01.jpg">
+              <div class="dd">
+              <p style="color: gray;">Action</p>
+              <p><b>Assasin creed</b></p>
+              </div>
+            <span class="icon2"><img src="https://img.icons8.com/?size=100&id=GnODgj39wOZm&format=png&color=000000" ></span>
+        </div>
+        <div class="percentage1"><strike>$28</strike> $20</div>
+  
+            
+        <div class="game-card">
+          <img src="./top-game-02.jpg">
+            <div class="dd">
+             <p style="color: gray;">Action</p>
+            <p><b>Assasin creed</b></p>
+        </div>
+        <span class="icon2"><img  src="https://img.icons8.com/?size=100&id=GnODgj39wOZm&format=png&color=000000" ></span>
+           </div>
+        <div class="percentage2">$44</div>
+  
+  
+       <div class="game-card">
+         <img src="./top-game-03.jpg">
+           <div class="dd">
+           <p style="color: gray;">Action</p>
+          <p><b>Assasin creed</b></p>
+        </div>
+        <span class="icon2"><img  src="https://img.icons8.com/?size=100&id=GnODgj39wOZm&format=png&color=000000" ></span>
+          </div>
+        <div class="percentage3"><strike>$64</strike> $44</div>
+  
+              
+        <div class="game-card">
+          <img src="./top-game-05.jpg">
+            <div class="dd">
+            <p style="color: gray;">Action</p>
+            <p><b>Assasin creed</b></p>
+         </div>
+         <span class="icon2"><img  src="https://img.icons8.com/?size=100&id=GnODgj39wOZm&format=png&color=000000" ></span>
+            </div>
+        <div class="percentage4">$32</div>
+        </section>
+
+            <section class="most-played">
+            <p style="color:#fa1561; margin-left: 10px;" >Top Games</p>
+            <h2 style="margin-left: 10px;">Most Played</h2>
+    
+            <div class="game-card2">
+             <img src="./top-game-01.jpg">
+             <p style="color: gray;">Adventure</p>
+             <p><b>Assasin creed</b></p>
+             </div>
+             <button class="explore1">EXPLORE</button>
+    
+             <div class="game-card2">
+                <img src="./top-game-02.jpg">
+                <p style="color: gray;">Adventure</p>
+                <p><b>Assasin creed</b></p>
+                </div>
+                <button class="explore2">EXPLORE</button>
+    
+                <div class="game-card2">
+                   <img src="./top-game-03.jpg">
+                   <p style="color: gray;">Adventure</p>
+                   <p><b>Assasin creed</b></p>
+                   </div>
+                   <button class="explore3">EXPLORE</button>
+    
+    
+                <div class="game-card2">
+                    <img src="./top-game-04.jpg">
+                    <p style="color: gray;">Adventure</p>
+                    <p><b>Assasin creed</b></p>
+                    </div>
+                     <button class="explore4">EXPLORE</button>
+    
+    
+                <div class="game-card2">
+                     <img src="./top-game-05.jpg">
+                     <p style="color: gray;">Adventure</p>
+                     <p><b>Assasin creed</b></p>
+                     </div> 
+                     <button class="explore5">EXPLORE</button>    
+                            
+                <div class="game-card2">
+                    <img src="./top-game-06.jpg">
+                    <p style="color: gray;">Action</p>
+                    <p><b>Assasin creed</b></p>
+                    </div>
+                    <button class="explore6">EXPLORE</button>
+    
+            <button class="button2">VIEW ALL</button>
+        </section>
+
+        <section class="categories">
+            <p style="color:#ff1161;">CATAGORIES</p>
+            <h2>Top Categories</h2>
+                <div class="category-card">
+                    <p style="color: white;">Action</p>
+                    <img src="./categories-01.jpg">
+                </div>
+    
+                <div class="category-card">
+                   <p style="color: white;">Action</p>
+                   <img src="./categories-02.jpg">
+                   </div>
+    
+                <div class="category-card">
+                    <p style="color: white;">Action</p>
+                    <img src="./categories-03.jpg">
+                   </div>
+    
+                <div class="category-card">
+                    <p style="color: white;">Action</p>
+                    <img src="./categories-04.jpg">
+                </div>
+    
+                <div class="category-card">
+                    <p style="color: white;">Action</p>
+                    <img src="./categories-05.jpg">
+                </div>
+          </section>
+
+
+        <section class="offers">
+            <div class="offer-card1">
+                <h5 style="color: #ee0a56;">OUR SHOP</h5>
+                <h1>Go Pre-Order Buy <br>& Get Best <span style="color:blue">Prices</span> For</br> You!</h1>
+                <p>Lorem ispum dolor consectetur adipiscing,<br>
+                    sed do eiusmod tempor incididunt.</br></p>
+                <button class="button3">SHOP NOW</button>
+            </div>
+            <img class="offer-img" src="./cta-bg.jpg">
+    
+            <div class="offer-card2">
+                <h5 style="color: #ee0a56;">NEWSLETTER</h5>
+                <h1>Get Up To $100 Off <br>Just Buy<span style="color: blue;">Subscribe</span></br> Newsletter!</h1>
+                <input type="text" placeholder="Your email...">
+                <button class="button4">SUBSCRIBE NOW</button>
+            </div>
+        </section> 
+
+    <footer>
+        <p> copyright © 2024 LUGX Gaming Company. All rights reserved. Design TemplateMo</p>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
